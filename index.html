@@ -16,6 +16,16 @@
     <div id="container"></div>
     <script type="text/babel">
 
+        class Counter extends React.Component {
+            render(){
+                const textStyle={
+                    fontSize:72,
+                    fontWeight:"bold",
+                }
+                return(<div style={textStyle}>0</div>)
+            }
+        }
+
         class CounterParent extends React.Component {
             render() {
                
@@ -32,12 +42,11 @@
                     fontSize: "1em",
                     width: 30,
                     height: 30,
-                    color: "#333", 
                     fontWeight: "bold", 
                     
                 };
                 return (<div style={backgroundStyle}>
-              
+                    <Counter/>
                     <button style={buttonStyle}>+</button>
                 </div>)
             }
