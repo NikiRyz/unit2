@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,27 +8,45 @@
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <!-- Перевод jsx в js -->
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script> 
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    
 </head>
+
 <body>
     <div id="container"></div>
     <script type="text/babel">
 
-    class CounterParent extends React.Component{
-        render(){
-            const backgroundStyle={
-                color: "#FFC53A",
-                fontSize: "2em",
-            }
-            return(<div style={backgroundStyle}>
-                <button>+</button>
+        class CounterParent extends React.Component {
+            render() {
+               
+                const backgroundStyle = {
+                    width: 250,
+                    height: 100,
+                    backgroundColor: "#FFC53A",
+                    padding: 50,
+                    borderRadius: 10,
+                    textAlign: "center"
+                }
+
+                const buttonStyle = {
+                    fontSize: "1em",
+                    width: 30,
+                    height: 30,
+                    color: "#333", 
+                    fontWeight: "bold", 
+                    
+                };
+                return (<div style={backgroundStyle}>
+              
+                    <button style={buttonStyle}>+</button>
                 </div>)
+            }
         }
-    }
 
         ReactDOM.render(
-            <CounterParent/>, document.querySelector("#container")
+            <CounterParent />, document.querySelector("#container")
         )
     </script>
 </body>
+
 </html>
