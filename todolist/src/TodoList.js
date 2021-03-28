@@ -6,6 +6,7 @@ class ToDoList extends Component {
     super(props);
     this.state = { items: [] };
     this.addItem = this.addItem.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
   }
   addItem(e) {
     const itemArray = this.state.items;
@@ -23,6 +24,14 @@ class ToDoList extends Component {
     console.log(this.state.items);
     e.preventDefault();
   }
+  deleteItem(key){
+    const filteredItems = this.state.items.filter(
+      function(item){
+        return(item.key!==key)
+      }
+    )
+    this.setState({items:filteredItems})
+  }
   render() {
     return (
       <div className="todoListMain">
@@ -35,7 +44,7 @@ class ToDoList extends Component {
             <button type="submit">Ok</button>
           </form>
         </div>
-        <TodoItems items={this.state.items} />
+        <TodoItems delete={this.deleteItem} items={this.state.items} />
       </div>
     );
   }
