@@ -1,0 +1,7 @@
+body{
+  background-color: #66CCFF;
+}
+#conainer{
+  display: flex;
+  justify-content: center;
+}
